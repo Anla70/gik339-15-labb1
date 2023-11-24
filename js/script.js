@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Uppdaterar innehållet i output med värdet från content-fältet. Vi får sätta en egen händelsehanterare för fältet color när vi fixar den sen.
     output.innerHTML = contentValue;
   }
-  // Lägger till en event listener för varje textfält så att funktionen som kollar efter input körs varje gång ett tecken skrivs in i något textfält
+  // Lägger till en event listener för varje textfält så att funktionen som kollar efter input och körs varje gång ett tecken skrivs in i något textfält
   for (let i = 0; i < textFields.length; i++) {
     textFields[i].addEventListener("input", handleInput);
   }
