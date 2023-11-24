@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"href="./css/style.css">   
-    <title>Labb 1 - Grupp 15</title>    
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Labb 1 - Grupp 15</title>
+  </head>
+  <body>
+    <div class="headline"><p>Labb 1 - Grupp 15</p></div>
+    <div class="form_container">
+      <div class="form_row">
+        <label class="label_text">Färg</label>
+        <input class="textfield" type="text" name="color" id="color" />
+      </div>
+
+      <div class="form_row">
+        <label class="label_text" for="Innehåll">Innehåll</label>
+        <input class="textfield" type="text" name="content" id="content" />
+      </div>
+
+      <div class="form_row">
+        <label class="label_text" for="Stil på box">Stil på box</label>
+        <input class="checkbox" type="checkbox" name="checkbox" id="divstyle" />
+      </div>
+
+      <div class="form_row">
+        <button id="button" class="text" type="button" onclick="myFunction()">Ta bort</button>
+      </div>
+
+      <div class="form_row">
+        <div id="output"></div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
 
 <!-- <table style="width: auto;">
 <tr>    
@@ -33,37 +62,3 @@
 </tr>
 </tr>
 </table> -->
-
-
-<div class="form_container">
-    <div class="form_row">
-      <label class="label_text">Färg</label>
-      <input class="textfield" type="text" name="color" id="color">
-    </div>
-  
-    <div class="form_row">
-      <label class="label_text" for="Innehåll">Innehåll</label>
-      <input class="textfield" type="text" name="content" id="content">
-    </div>
-  
-    <div class="form_row">
-      <label class="label_text" for="Stil på box">Stil på box</label>      
-      <input class="checkbox" type="checkbox" name="checkbox" id="divstyle">
-    </div>
-  
-  
-    <div class="form_row">
-      <button id="button" class="text" type="button" onclick="myFunction()">Ta bort</button>
-    </div>
-  
-    <div class="form_row">
-        <div class="empty_box"></div>
-      </div>    
-  </div>
-
-  <script src="./js/script.js"></script>
-    
-
-
-</body>
-</html>

@@ -1,8 +1,18 @@
 body
 {
+    flex-direction: column;
+    display: flex;
     width: 100%;
     background-color: rgba(9, 27, 53, 0.842);     
 }
+
+.headline
+{
+    margin: auto; 
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .form_container
 {   
     padding-top: 15px;
@@ -60,24 +70,22 @@ body
     
 }
 
-.empty_box
+#output
 {   
-    height: 22px;
     width: 400px;
-    border: grey 1px solid;
-    
+    height: 22px;
+    border: grey 1px solid;    
 }
 
 #divstyle
 {       
-    margin-right: 225px;  
-    
+    margin-right: 225px;    
      
 }
 
 .checkbox
 {    
     width: 9px;
-    height: 9px;    
-    
+    height: 9px;        
 }
+
