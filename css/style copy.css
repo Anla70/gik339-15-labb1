@@ -17,7 +17,7 @@ body {
   padding: 3rem 2.4rem; /* Padding för innehållet - flyttar texten */
   display: grid; /* Använder grid-layout */
   grid-template-columns: repeat(2, 1fr); /* Två kolumner med samma bredd */
-  grid-template-rows: repeat(3, auto); /* Tre rader med automatisk höjd */
+  grid-template-rows: repeat(3, auto); /* Tre rader med auto-höjd */
   gap: 2px; /* Mellanrum mellan grid-elementen */
 }
 
