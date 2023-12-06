@@ -1,43 +1,48 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const checkBox = document.getElementById("divstyle");
-  const textFields = document.getElementsByClassName("textfield");
-  const button = document.getElementById("button");
-  const output = document.getElementById("output");
+// Checkboxen hämtas
+const checkbox = document.querySelector('input[type="checkbox"]');
 
-  function handleInput() {
-    // Hämtar värdet från content-fältet
-    const contentValue = document.querySelector("#content").value;
+// Alla textfält hämtas
+const textfields = document.querySelectorAll(".textfield");
 
-    // Uppdaterar innehållet i output med värdet från content-fältet. Vi får sätta en egen händelsehanterare för fältet color när vi fixar den sen.
-    output.innerHTML = contentValue;
+// Knappen hämtas
+const button = document.getElementsByTagName("button")[0];
+
+// Div-elementet hämtas
+const divElement = document.getElementById("empty_box");
+
+// Här skapas en fördefinierad funktion
+function handleInputEvent(e) {
+  // Eventobjektet används för att få information om target och vi skriver ut infon till konsolen
+  const target = e.target;
+  console.log(`Input field ${target.name} triggered the event.`);
+
+  // Om avsändaren/target är inputfältet content så ska div-elementet uppdateras
+  if (target.name === "content") {
+    divElement.innerHTML = target.value;
   }
-  // Lägger till en event listener för varje textfält så att funktionen som kollar efter input och körs varje gång ett tecken skrivs in i något textfält
-  for (let i = 0; i < textFields.length; i++) {
-    textFields[i].addEventListener("input", handleInput);
-  }
+}
+
+// Här kopplar vi på eventlyssnare
+
+// Eventlyssnare till checkboxen
+checkbox.addEventListener("change", function () {
+  // Hämtar färgen från textfältet
+  const colorInput = document.getElementById("color");
+  const color = colorInput.value;
+
+  // Uppdaterar div-elementets bakgrundsfärg
+  divElement.style.backgroundColor = color;
 });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const checkbox = document.getElementById('divstyle')
-//     const textfield = document.querySelector('textfield');
-//     const button = document.getElementsByClassName('button');
-//     const output = document.querySelector('output');
+// Eventlyssnare till textfälten
+textfields.forEach(function (textfield) {
+  // Kopplar eventlyssnare till input och blur för våra textfält
+  textfield.addEventListener("input", handleInputEvent);
+  textfield.addEventListener("blur", handleInputEvent);
+});
 
-//     function handleInput(e) {
-
-//         const contentValue = textfield.value;
-//         output.innerHTML = `${contentValue}`;
-//     }
-
-//     function handleInput2(e) {
-
-//         const target = e.target;
-//         console.log(`${target.value}`);
-//         output.innerHTML = `${target.value}`;
-
-//         if (target.name === 'content') {
-//             output.innerHTML = `${target.value}`;
-//         }
-//     }
-
-// });
+// Eventlyssnare till knappen
+button.addEventListener("click", function () {
+  // Tar bort div-elementet
+  divElement.remove();
+});

@@ -1,79 +1,102 @@
+/* Styling för hela sidans kropp (body) */
 body {
-  flex-direction: column;
-  display: flex;
-  width: 100%;
-  background-color: rgba(9, 27, 53, 0.842);
+  width: 100%; /* Full bredd */
+  height: 100vh; /* Hela skärmens höjd */
+  background-color: rgba(2, 19, 43, 0.911); /* Bakgrundsfärg med RGBA-värden */
+  display: grid; /* Använder grid-layout */
+  gap: 10px; /* Mellanrum mellan grid-elementen */
 }
 
-.headline {
-  margin: auto;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* Styling för containern för formulär */
 .form_container {
-  padding-top: 15px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: 405px;
-  height: 160px;
-  background-color: rgba(250, 250, 250, 0.97);
-  border-radius: 5px;
-  margin: auto;
+  box-sizing: border-box; /* Räknar in padding i storleken */
+  width: 51rem; /* Bredd på formuläret */
+  height: 20rem; /* Höjd på formuläret */
+  margin-left: 30%; /* Avstånd från vänsterkanten */
+  margin-bottom: 80%; /* Avstånd från nedre kanten */
+  padding: 3rem 2.4rem; /* Padding för innehållet - flyttar texten */
+  display: grid; /* Använder grid-layout */
+  grid-template-columns: repeat(2, 1fr); /* Två kolumner med samma bredd */
+  grid-template-rows: repeat(3, auto); /* Tre rader med auto-höjd */
+  gap: 2px; /* Mellanrum mellan grid-elementen */
 }
 
-.label_text {
-  color: rgba(48, 47, 47, 0.877);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
-  font-stretch: condensed;
-  font-weight: normal;
+/* Gemensam stil för vissa element med selektorn :where() */
+:where(.textfield, .checkbox, #empty_box, #button) {
+  border: 1px solid rgb(65, 65, 66); /* Svart ram */
 }
 
+:where(.form_container, #divstyle) {
+  background-color: rgba(255, 255, 255, 0.89); /* Bakgrundsfärg */
+}
+
+:where(.form_container, #button, #content, #color) {
+  color: rgba(48, 47, 47, 0.856); /* Textfärg */
+  font-size: 1rem; /* Textstorlek */
+}
+
+:where(.form_container, #button) {
+  border-radius: 8px; /* Rundade hörn */
+}
+
+:where(p, .text, #empty_box) {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Teckensnittsfamilj */
+}
+
+/* Gemensam stil för textelement med klassen 'text' */
+.text {
+  font-size: 1.1rem; /* Textstorlek */
+  font-stretch: condensed; /* Komprimerad textbredd */
+  letter-spacing: 0.5px; /* Avstånd mellan bokstäver */
+}
+
+/* Styling för paragrafelementet */
+p {
+  padding-top: 1rem; /* Utfyllnad överst */
+  margin-left: 45%; /* Marginal från vänsterkanten */
+  font-size: 2rem; /* Textstorlek */
+  color: rgba(255, 255, 255, 0.842); /* Textfärg */
+  font-weight: 200; /* Textvikt */
+}
+
+/* Grid-klassen för första kolumnen */
+.column1 {
+  grid-column: 1; /* Innehållet placeras i första kolumnen */
+}
+
+/* Grid-klassen för andra kolumnen */
+.column2 {
+  grid-column: 2; /* Innehållet placeras i andra kolumnen */
+}
+
+/* Grid-klassen för element som sträcker sig över två kolumner */
+.row {
+  grid-column: span 2; /* Spannar/sträcker sig över båda kolumnerna */
+}
+
+/* Styling för textfält */
 .textfield {
-  width: 230px;
-  height: 12px;
-  border: 1px solid grey;
-  border-radius: 3px;
+  width: 29rem; /* Bredd på textfältet */
+  height: 1.5rem; /* Höjd på textfältet */
+  border-radius: 6px; /* Rundade hörn */
 }
 
-.form_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 3px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-#button {
-  box-sizing: border-box;
-  width: 60px;
-  height: 20px;
-  border-radius: 5px;
-  background-color: rgba(190, 212, 223, 0.692);
-  color: rgba(48, 47, 47, 0.877);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
-  font-stretch: condensed;
-  font-weight: normal;
-  border: rgba(128, 128, 128, 0.877) 1px solid;
-  margin-bottom: 6px;
-}
-
-#output {
-  width: 400px;
-  height: 22px;
-  border: grey 1px solid;
-  color: green;
-}
-
-#divstyle {
-  margin-right: 225px;
-}
-
+/* Styling för kryssrutan (checkbox) */
 .checkbox {
-  width: 9px;
-  height: 9px;
+  width: 16px; /* Bredd på kryssrutan */
+  height: 16px; /* Höjd på kryssrutan */
+}
+
+/* Styling för knappen */
+#button {
+  width: 7rem; /* Bredd på knappen */
+  height: 2.2rem; /* Höjd på knappen */
+  background-color: rgba(190, 212, 223, 0.692); /* Bakgrundsfärg */
+}
+
+/* Styling för det tomma output-fältet */
+#empty_box {
+  margin-top: 0.6rem; /* Marginal ovanför fältet */
+  width: 46rem; /* Bredd på det tomma fältet */
+  height: 2.8rem; /* Höjd på det tomma fältet */
 }
